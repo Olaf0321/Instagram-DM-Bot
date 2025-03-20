@@ -18,8 +18,26 @@ DMS_HOURS_OPTIONS = ["choose option", "50DMs/24Hours", "25DMs/12Hours", "10DMs/8
 EMAIL_OPTIONS = ["choose email", "scagencyn@gmail.com", "gigiscage@gmail.com", "hundsonsfpd@outlook.com", "rogerzamora1936@mailtrust.online", "mariossimeonidis255@gmail.com"]
 
 # Login URL
-LOGIN_URL = "https://www.instagram.com"
-# LOGIN_URL = "http://localhost"
+# LOGIN_URL = "https://www.instagram.com/accounts/login/"
+LOGIN_URL = "http://localhost:8080/mywebsite/login.html"
 
 # File path
 FILE_PATH = "user_path.csv"
+
+#Reject URL
+REJECT_URL = [
+    "onlyfans.com",
+    "linktr.ee",
+    "allmylinks.com",
+    "beacons"
+]
+
+#Inject keyword
+INJECT_KEYWORD = [
+    "OF",
+    "Link",
+    "Dm",
+    "18+",
+    "Creator",
+    "Model"
+]

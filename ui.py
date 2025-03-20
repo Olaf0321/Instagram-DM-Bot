@@ -3,16 +3,13 @@ import logging
 from tkinter import Entry, Label, Button, Text, ttk
 from config import LABEL_FONT, ENTRY_FONT, BTN_FONT, ENTRY_BG, ENTRY_FG, BTN_BG, BTN_FG, HOVER_BG, DMS_HOURS_OPTIONS, BTN_BG, BTN_FG, ORIGINAL_PASSWORD, EMAIL_OPTIONS
 from main import perform_automation_DM
+from functions.fns import *
 
 logging.basicConfig(
     filename="app.log",  # Log file name
     level=logging.INFO,  # Set logging level
     format="%(asctime)s - %(levelname)s - %(message)s"  # Log format
 )
-
-
-def print_log(context):
-    logging.info(context)
 
 def show_alert(value):
     # Create custom alert message in the center of the window
@@ -59,7 +56,7 @@ def initialize_automation_DM():
         text = "Please enter password"
     elif message == '':
         text = 'Please enter message'
-    elif dms_hours == 'choose options':
+    elif dms_hours == 'choose option':
         text = 'Please choose dms_hours'
     else:
         print_log("correctly initialized")
