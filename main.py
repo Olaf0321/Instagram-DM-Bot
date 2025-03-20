@@ -10,7 +10,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
-# import pyperclip
+import pyperclip
 import csv
 
 from functions.choose_words import choose_words
@@ -160,12 +160,6 @@ def capture_profile_data():
     except Exception as e:
         print_log("❌ Error capturing profile data:", e)
         return None, None, None, None, None
-
-def save_user_data(profile_url, display_name, bio_text, external_link):
-    """Saves user data to a CSV file"""
-    with open("instagram_users.csv", "a", newline="", encoding="utf-8") as file:
-        writer = csv.writer(file)
-        writer.writerow([profile_url, display_name, bio_text, external_link])
 
 def send_dm_from_profile(profile_url, message):
     """
