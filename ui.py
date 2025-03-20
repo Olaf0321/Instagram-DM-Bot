@@ -43,11 +43,8 @@ def show_alert(value):
     alert_btn.pack(pady=5)
 
 def initialize_automation_DM():
-    print_log("init automate")
-    # email = email_var.get()
-    # password = password_entry.get()
-    email = "eagle.free27@gmail.com"
-    password = "clrhslrjwsoqjr"    
+    email = email_var.get()
+    password = password_entry.get()
     link = link_entry.get()
     keyword = keyword_entry.get()
     message = message_text.get("1.0", "end-1c")  # Get text from Text widget
@@ -55,12 +52,20 @@ def initialize_automation_DM():
     dms_hours = dms_hours_var.get()
 
     # Check if any of the fields are empty or non-valued
-    if not password or not link or not keyword or not message or dms_hours == 'choose option' or email == 'choose email':
-        text = "Please fill in all fields correctly!"
-        show_alert(text)
+    text = ''
+    if email == 'choose email':
+        text = "Please choose email"
+    elif password == '':
+        text = "Please enter password"
+    elif message == '':
+        text = 'Please enter message'
+    elif dms_hours == 'choose options':
+        text = 'Please choose dms_hours'
     else:
         print_log("correctly initialized")
         perform_automation_DM(email, password, link, keyword, message, search_words, dms_hours)
+    
+    if text != '': show_alert(text)
 
 # Create main window
 root = tk.Tk()
