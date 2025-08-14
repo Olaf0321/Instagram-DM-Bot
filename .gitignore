@@ -10,3 +10,4 @@ app.log
 *.zip
 *.rar
 screenshots/
+venv
